@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="CivilightEterna.Pages.Tabs.HistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CivilightEterna.Pages.Tabs"
+             mc:Ignorable="d"  xmlns:uiw="http://schemas.inkore.net/lib/ui/wpf"
+xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+             xmlns:s="https://github.com/canton7/Stylet"
+        d:DataContext="{d:DesignInstance local:HistoryViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Text="{Binding DisplayName, Converter={StaticResource StringSplitbySpaceConverter}, ConverterParameter=0}" FontFamily="{StaticResource FluentIcon}" FontSize="240" VerticalAlignment="Bottom" Foreground="#20000000" HorizontalAlignment="Right" Margin="0,0,-20,-20" />
+        <Grid Grid.Row="0" Margin="20,0,20,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <TextBlock Text="{Binding DisplayName, Converter={StaticResource StringSplitbySpaceConverter}, ConverterParameter=0}" FontSize="28"  FontFamily="{StaticResource FluentIcon}" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static ui:ThemeKeys.AccentTextFillColorPrimaryBrushKey}}"/>
+                <TextBlock Text="{Binding DisplayName, Converter={StaticResource StringSplitbySpaceConverter}, ConverterParameter=2}" FontSize="28" FontWeight="Bold" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                <TextBlock Text="{Binding DisplayName, Converter={StaticResource StringSplitbySpaceConverter}, ConverterParameter=1}" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static ui:ThemeKeys.TextFillColorTertiaryBrushKey}}" Margin="4,0,0,2"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Margin="20,10,20,0">
+            <uiw:SimpleStackPanel Spacing="10" VerticalAlignment="Top">
+                <uiw:SimpleStackPanel>
+                    <TextBlock Text="差分补丁" Margin="12,0,0,0" Foreground="{DynamicResource TextForeLabelGray}"/>
+                    <Grid>
+                        <TextBox d:Text="FILES" Text="{Binding DiffFileName}"  MaxLines="1" FontWeight="Medium" Foreground="{DynamicResource TextForeContentGray}" Margin="0,0,90,0" />
+                        <Button Command="{s:Action BrowseDiffFile}" HorizontalAlignment="Right" Style="{StaticResource {x:Static ui:ThemeKeys.AccentButtonStyleKey}}" Width="80">
+                            <uiw:SimpleStackPanel Orientation="Horizontal" Spacing="10">
+                                <TextBlock Text="&#xe8ff;" FontFamily="{StaticResource FluentIcon}" VerticalAlignment="Center" FontSize="16" />
+                                <TextBlock Text="查看" VerticalAlignment="Center"/>
+                            </uiw:SimpleStackPanel>
+                        </Button>
+                    </Grid>
+                </uiw:SimpleStackPanel>
+
+                
+            </uiw:SimpleStackPanel>
+            <TextBox Text="{Binding FileInfo}" IsReadOnly="True" Margin="0,60,0,20"/>
+        </Grid>
+    </Grid>
+</UserControl>

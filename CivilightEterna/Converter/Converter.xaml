@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:Toxiad.Converters.Converter">
+
+    <c:BooleanInverseConverter x:Key="BooleanInverseConverter"/>
+    <c:BoolToVisiCollaConverter x:Key="BoolToVisiCollaConverter"/>
+    <c:StringToImageConverter x:Key="StringToImageConverter"/>
+    <c:AbleStatusBrushConverter x:Key="AbleStatusBrushConverter"/>
+    <c:StringSplitbySpaceConverter x:Key="StringSplitbySpaceConverter"/>
+    <c:StringSplitConverter x:Key="StringSplitConverter"/>
+    <c:CollectionToBoolConverter x:Key="CollectionToBoolConverter"/>
+    <c:CollectionToVisiConverter x:Key="CollectionToVisiConverter"/>
+    <c:BooleanStringConverter x:Key="BooleanStringConverter"/>
+    <c:StorageConverter x:Key="StorageConverter"/>
+    <c:PercentWarnConverter x:Key="PercentWarnConverter"/>
+</ResourceDictionary>
