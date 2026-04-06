@@ -102,10 +102,11 @@ xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
                         <SolidColorBrush x:Key="{x:Static ui:ThemeKeys.AccentButtonBackgroundPointerOverKey}" Color="#FF076A02" Opacity=".8"/>
                         <SolidColorBrush x:Key="{x:Static ui:ThemeKeys.AccentButtonBackgroundPressedKey}" Color="#FF084B05"/>
                     </FrameworkElement.Resources>
-                    <uiw:SimpleStackPanel Orientation="Horizontal" Spacing="10">
-                        <ui:ProgressRing Visibility="{Binding IsRunning, Converter={StaticResource BoolToVisiCollaConverter}}" IsIndeterminate="{Binding IsRunning}" Width="16" Height="16" d:Value="50" Foreground="White" />
+                    <uiw:SimpleStackPanel Orientation="Horizontal" >
+                        <ui:ProgressRing Visibility="{Binding IsRunning, Converter={StaticResource BoolToVisiCollaConverter}}" IsIndeterminate="{Binding IsRunning}" Width="16" Height="16" d:Value="50" Foreground="White" Margin="0,0,10,0" />
 
-                        <TextBlock Text="&#xe8de;" FontFamily="{StaticResource FluentIcon}" VerticalAlignment="Center" FontSize="16" />
+                        <TextBlock Text="&#xe8de;" FontFamily="{StaticResource FluentIcon}" VerticalAlignment="Center" FontSize="16" Margin="0,0,10,0" />
+                        <TextBlock Text="正在" Visibility="{Binding IsRunning, Converter={StaticResource BoolToVisiCollaConverter}}" VerticalAlignment="Center"/>
                         <TextBlock Text="生成" VerticalAlignment="Center"/>
                     </uiw:SimpleStackPanel>
                 </Button>
